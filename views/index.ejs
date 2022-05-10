@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<%- include('layots/head') %> 
+<body>
+<%- include('layots/navBar.ejs') %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <ul class="list-group">
+                <% contacts.forEach(item => { %> 
+                <li class="list-group-item">
+                    <h3><%= item.name %> </h3>
+                    <p><%= item.phone %></p>
+                    <p><%= item.address %> </p>
+                    <a href="/delete/<%= item.id %>" class="btn btn-danger">Видалити</a>
+                    <a href="/find/<%= item.id %>" class="btn btn-outline-primary">Переглянути</a>
+                </li>
+                <% }) %> 
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
